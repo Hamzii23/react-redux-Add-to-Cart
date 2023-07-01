@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import React from 'react';
@@ -9,11 +10,11 @@ import ProductData from './Models/ProductData';
 const App = () => {
   return (
     <SafeAreaView style={{backgroundColor:'white', flex:1}}>
-    <View  >
+    <View style={{}} >
       <Header />
       <ScrollView>
       {
-        ProductData.map((item) =><Product items={item}/>)
+        ProductData.map((item) =><Product key={item.id} items={item}/>)
       }
       </ScrollView>
     </View>
