@@ -6,21 +6,22 @@ import { useState } from 'react';
 const Header = () => {
   const cartData = useSelector((state) => state.reducer);
   const [addCart, setAddCart] = useState(0);
-  console.log(addCart);
+  // console.log(addCart);
   useEffect(() => {
     setAddCart(cartData.length);
   }, [cartData]);
+  // console.log(addCart)
   return (
-    <View style={{ flex: 1, paddingBottom: 30 }}>
+    <View >
       <Text
         style={{
           fontSize: 20,
           textAlign: 'right',
-          backgroundColor: 'grey',
+          backgroundColor:'grey',
           padding: 20,
+          color:'white'
         }}
       >
-        {' '}
         {addCart}
       </Text>
     </View>

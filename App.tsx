@@ -1,32 +1,19 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import Header from './Components/Screens/header';
-import Product from './Components/Screens/product';
-import ProductData from './Models/ProductData';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ProductWraper from './Components/Screens/productWrapper';
+import User from './Components/Screens/user';
+const Stack = createNativeStackNavigator();
 const App = () => {
   return (
-    <SafeAreaView style={{backgroundColor:'white', flex:1}}>
-    <View style={{}} >
-      <Header />
-      <ScrollView>
-      {
-        ProductData.map((item) =><Product key={item.id} items={item}/>)
-      }
-      </ScrollView>
-    </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="Home" component={ProductWraper} />
+      <Stack.Screen name="User" component={User} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  highlight: {
-    fontWeight: '700',
-    color:'white'
-  },
-});
 
 export default App;

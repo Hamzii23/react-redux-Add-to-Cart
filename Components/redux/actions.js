@@ -1,10 +1,17 @@
 /* eslint-disable prettier/prettier */
-import { ADD_TO_CART } from "./constants";
+import { ADD_TO_CART, REMOVE_TO_CART } from './constants';
 
-export function addToCart(props){
-    return{
+export function addToCart(item){
+    return {
         type:ADD_TO_CART,
-        payload:props.item,
+        payload:item,
+    };
+}
+
+export function removeToCart(item){
+    return{
+        type:REMOVE_TO_CART,
+        payload:item,
     }
 }
 // payload mean data
